@@ -1,6 +1,8 @@
 # react-link-state-vm
 
-Link state with virtual method. [Live example](http://arnosaine.github.io/react-link-state-vm).
+Link state with virtual method.
+
+[Live example](http://arnosaine.github.io/react-link-state-vm)
 
 ## Example Input
 
@@ -86,13 +88,13 @@ In a simple form, `valueLink` could be just a function that returns `value` and 
 
 ```js
 function valueLink(name) {
-	return {
-		value: this.state[name],
-		onChange: ({target: {value}}) =>
+    return {
+        value: this.state[name],
+        onChange: ({target: {value}}) =>
             this.setState({
                 [name]: value
             })
-	};
+    };
 }
 ```
 
