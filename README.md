@@ -6,12 +6,12 @@ Link state with virtual method.
 
 ## Example Input
 
-```js
+```jsx
 import {valueLink} from 'react-link-state-vm';
 
 class ExampleWithInput extends Component {
     render() {
-        // this.state.name: undefined / 'some text'
+        // this.state.name => undefined | 'some text'
         return <input type="text" {...this::valueLink('name')} />;
     }
 }
@@ -19,19 +19,19 @@ class ExampleWithInput extends Component {
 
 ### Checkbox and Radio
 
-```js
+```jsx
 import {checkedLink} from 'react-link-state-vm';
 
 class ExampleWithCheckbox extends Component {
     render() {
-        // this.state.race: undefined / true / false
+        // this.state.race => undefined | true | false
         return <input type="checkbox" {...this::checkedLink('race')} />;
     }
 }
 
 class ExampleWithMultiCheckbox extends Component {
     render() {
-        // this.state.category: undefined / [] / ['motogp', 'moto3', ...]
+        // this.state.category => undefined | [] | ['motogp', 'moto3', ...]
         return <div>
             <input type="checkbox" {...this::checkedLink('category', 'motogp')} />
             <input type="checkbox" {...this::checkedLink('category', 'moto2')} />
@@ -42,7 +42,7 @@ class ExampleWithMultiCheckbox extends Component {
 
 class ExampleWithRadio extends Component {
     render() {
-        // this.state.category: undefined / 'motogp' / ...
+        // this.state.category => undefined | 'motogp' | ...
         return <div>
             <input type="radio" {...this::checkedLink('category', 'motogp')} />
             <input type="radio" {...this::checkedLink('category', 'moto2')} />
@@ -54,12 +54,12 @@ class ExampleWithRadio extends Component {
 
 ### Select
 
-```js
+```jsx
 import {selectedLink} from 'react-link-state-vm';
 
 class ExampleWithSelect extends Component {
     render() {
-        // this.state.bike: undefined / 'ducati' / ...
+        // this.state.bike => undefined | 'ducati' | ...
         return <select {...this::selectedLink('bike')}>
             <option value="ducati">Ducati</option>
             <option value="honda">Honda</option>
@@ -71,7 +71,7 @@ class ExampleWithSelect extends Component {
 
 class ExampleWithMultiSelect extends Component {
     render() {
-        // this.state.bikes: undefined / [] / ['ducati', 'honda', ...]
+        // this.state.bikes => undefined | [] | ['ducati', 'honda', ...]
         return <select {...this::selectedLink('bikes')} multiple>
             <option value="ducati">Ducati</option>
             <option value="honda">Honda</option>
@@ -86,7 +86,7 @@ class ExampleWithMultiSelect extends Component {
 
 In a simple form, `valueLink` could be just a function that returns `value` and `onChange` handler.
 
-```js
+```jsx
 function valueLink(name) {
     return {
         value: this.state[name],
