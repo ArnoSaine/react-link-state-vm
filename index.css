@@ -10,6 +10,7 @@ body,
     width: 50%;
     height:100%;
     overflow: auto;
+    max-width: none;
 }
 
 input[type="text"],
