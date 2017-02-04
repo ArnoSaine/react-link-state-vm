@@ -1,6 +1,6 @@
 {
   "name": "react-link-state-vm",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Link state with virtual method.",
   "keywords": [
     "function-bind",
