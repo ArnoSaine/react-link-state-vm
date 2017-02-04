@@ -9,13 +9,13 @@ const nextMultiValues = (checked, current = [], value) => checked
 // Radio and Multi-checkbox
 // checkedLink :: ReactInstance => (string, String) -> {String name, Boolean checked, Function onChange}
 export default function (name, value) {
-	return {
+    return {
         name,
-		checked: value === undefined
+        checked: value === undefined
             ? this::getValue(name, false)
             : this::getValue(name, []).indexOf(value) > -1,
             //: this::getValue(name, []).includes(value),
-		onChange: ({target: {checked, type}}) =>
+        onChange: ({target: {checked, type}}) =>
             this.setState((state = {}) => value === undefined
                 ? {
                     [name]: checked
@@ -25,5 +25,5 @@ export default function (name, value) {
                         ? nextMultiValues(checked, state[name], value)
                         : value
                 })
-	};
+    };
 }
