@@ -4,6 +4,16 @@ Link state with virtual method.
 
 [Live example](http://arnosaine.github.io/react-link-state-vm)
 
+To use the experimental function bind operator `::`, you need [@babel/plugin-proposal-function-bind](https://www.npmjs.com/package/@babel/plugin-proposal-function-bind) (or [@babel/preset-stage-0](https://www.npmjs.com/package/@babel/preset-stage-0)). Or you can use `Function.prototype.call` to assign correct `this` value. Example:
+
+```js
+// Proposal 👍
+this::valueLink("name");
+
+// Standard
+valueLink.call(this, "name");
+```
+
 ## Example Input
 
 ```js
