@@ -17,6 +17,7 @@
   "scripts": {
     "prebuild": "rimraf cjs es",
     "build": "npm run inbuild --",
+    "deploy": "cd liveExample && npm run build && cd .. && gh-pages --dist liveExample/dist",
     "postpublish": "cd liveExample && npm install react-link-state-vm@latest --save-dev",
     "prepublish": "npm run build",
     "eslint": "eslint {.,src/**}/*.js --fix",
@@ -32,6 +33,7 @@
     "@babel/runtime": "^7.0.0-beta.47"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "library-util": "^0.1.8"
   },
   "module": "es",
