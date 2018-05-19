@@ -17,7 +17,7 @@ export default function(name, value) {
     // : this::getValue(name, []).includes(value),
     onChange: ({ target: { checked, type } }) =>
       this.setState(
-        (state = {}) =>
+        state =>
           value === undefined
             ? {
                 [name]: checked
@@ -25,7 +25,7 @@ export default function(name, value) {
             : {
                 [name]:
                   type === 'checkbox'
-                    ? nextMultiValues(checked, state[name], value)
+                    ? nextMultiValues(checked, (state ?? {})[name], value)
                     : value
               }
       )
