@@ -6,7 +6,7 @@ Link state with virtual method.
 
 ## Example Input
 
-```jsx
+```js
 import { valueLink } from "react-link-state-vm";
 
 class ExampleWithInput extends Component {
@@ -19,7 +19,7 @@ class ExampleWithInput extends Component {
 
 ### Checkbox and Radio
 
-```jsx
+```js
 import { checkedLink } from "react-link-state-vm";
 
 class ExampleWithCheckbox extends Component {
@@ -58,7 +58,7 @@ class ExampleWithRadio extends Component {
 
 ### Select
 
-```jsx
+```js
 import { selectedLink } from "react-link-state-vm";
 
 class ExampleWithSelect extends Component {
@@ -94,7 +94,7 @@ class ExampleWithMultiSelect extends Component {
 
 In a simple form, `valueLink` could be just a function that returns `value` and `onChange` handler.
 
-```jsx
+```js
 function valueLink(name) {
   return {
     value: this.state[name],
@@ -105,7 +105,3 @@ function valueLink(name) {
   };
 }
 ```
-
-## License
-
-ISC
