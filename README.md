@@ -19,9 +19,9 @@ valueLink.call(this, "name");
 ```js
 import { valueLink } from "react-link-state-vm";
 
-class ExampleWithInput extends Component {
+class ExampleComponentWithInput extends Component {
   render() {
-    // this.state.name => undefined | 'some text'
+    // this.state.name -> undefined | "some text"
     return <input type="text" {...this::valueLink("name")} />;
   }
 }
@@ -32,16 +32,16 @@ class ExampleWithInput extends Component {
 ```js
 import { checkedLink } from "react-link-state-vm";
 
-class ExampleWithCheckbox extends Component {
+class ExampleComponentWithCheckbox extends Component {
   render() {
-    // this.state.race => undefined | true | false
+    // this.state.race -> undefined | true | false
     return <input type="checkbox" {...this::checkedLink("race")} />;
   }
 }
 
-class ExampleWithMultiCheckbox extends Component {
+class ExampleComponentWithMultiCheckbox extends Component {
   render() {
-    // this.state.category => undefined | [] | ['motogp', 'moto3', ...]
+    // this.state.category -> undefined | [] | ["motogp", "moto3", ...]
     return (
       <div>
         <input type="checkbox" {...this::checkedLink("category", "motogp")} />
@@ -52,9 +52,9 @@ class ExampleWithMultiCheckbox extends Component {
   }
 }
 
-class ExampleWithRadio extends Component {
+class ExampleComponentWithRadio extends Component {
   render() {
-    // this.state.category => undefined | 'motogp' | ...
+    // this.state.category -> undefined | "motogp" | ...
     return (
       <div>
         <input type="radio" {...this::checkedLink("category", "motogp")} />
@@ -71,9 +71,9 @@ class ExampleWithRadio extends Component {
 ```js
 import { selectedLink } from "react-link-state-vm";
 
-class ExampleWithSelect extends Component {
+class ExampleComponentWithSelect extends Component {
   render() {
-    // this.state.bike => undefined | 'ducati' | ...
+    // this.state.bike -> undefined | "ducati" | ...
     return (
       <select {...this::selectedLink("bike")}>
         <option value="ducati">Ducati</option>
@@ -85,9 +85,9 @@ class ExampleWithSelect extends Component {
   }
 }
 
-class ExampleWithMultiSelect extends Component {
+class ExampleComponentWithMultiSelect extends Component {
   render() {
-    // this.state.bikes => undefined | [] | ['ducati', 'honda', ...]
+    // this.state.bikes -> undefined | [] | ["ducati", "honda", ...]
     return (
       <select {...this::selectedLink("bikes", true)}>
         <option value="ducati">Ducati</option>
