@@ -11,7 +11,7 @@ class Example extends Component {
         <input type="text" {...this::valueLink('name')} />
 
         <h4>Checkbox</h4>
-        <label htmlFor="firstName">
+        <label>
           <input type="checkbox" {...this::checkedLink('race')} /> Race
         </label>
 
