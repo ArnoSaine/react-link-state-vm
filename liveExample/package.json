@@ -1,0 +1,46 @@
+{
+  "name": "react-link-state-vm-live-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "dev": "cross-env NODE_ENV=development webpack --mode development --progress --watch",
+    "dev-server": "cross-env NODE_ENV=development webpack-dev-server --mode development --inline --hot",
+    "eslint": "eslint {.,src/**}/*.js --fix",
+    "lint": "npm run eslint && npm run prettier",
+    "precommit": "lint-staged",
+    "prepack": "npm run build",
+    "prettier": "npm run prettier:write -- {.,src/**}/*.{js,json} !./package-lock.json",
+    "prettier:write": "prettier --config .prettierrc.js --write",
+    "preversion": "npm run lint"
+  },
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno@mowhi.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.1",
+    "create-react-class": "^15.6.3",
+    "frontend-app": "^2.0.0-beta.4",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.2.0",
+    "react-link-state-vm": "file:../react-link-state-vm-0.1.4.tgz",
+    "react-live-editor": "^5.2.1"
+  },
+  "files": ["dist"],
+  "lint-staged": {
+    "*.js": ["eslint --fix", "npm run prettier:write", "git add"],
+    "*.{css,json,less,md,scss}": ["npm run prettier:write", "git add"]
+  },
+  "config": {
+    "frontendApp": {
+      "type": "react",
+      "intl": "true"
+    }
+  }
+}

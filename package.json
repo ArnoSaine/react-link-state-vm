@@ -17,6 +17,7 @@
   "scripts": {
     "prebuild": "rimraf cjs es",
     "build": "npm run inbuild --",
+    "postpublish": "cd liveExample && npm install react-link-state-vm@latest --save-dev",
     "prepublish": "npm run build",
     "eslint": "eslint {.,src/**}/*.js --fix",
     "inbuild": "library-util babel --verbose",
