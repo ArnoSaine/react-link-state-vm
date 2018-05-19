@@ -7,10 +7,11 @@ const nextMultiValues = options =>
 // selectedLink :: ReactInstance => String -> {String value, Function onChange}
 // Select multiple
 // selectedLink :: ReactInstance => String -> {Array value, Function onChange}
-export default function(name) {
+export default function(name, multiple) {
   return {
-    value: this::getValue(name),
-    onChange: ({ target: { multiple, options, value } }) =>
+    multiple,
+    value: this::getValue(name, multiple ? [] : undefined),
+    onChange: ({ target: { options, value } }) =>
       this.setState({
         [name]: multiple ? nextMultiValues(options) : value
       })

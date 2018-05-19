@@ -89,7 +89,7 @@ class ExampleWithMultiSelect extends Component {
   render() {
     // this.state.bikes => undefined | [] | ['ducati', 'honda', ...]
     return (
-      <select {...this::selectedLink("bikes")} multiple>
+      <select {...this::selectedLink("bikes", true)}>
         <option value="ducati">Ducati</option>
         <option value="honda">Honda</option>
         <option value="suzuki">Suzuki</option>

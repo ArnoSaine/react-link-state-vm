@@ -61,7 +61,7 @@ class Example extends Component {
         </select>
 
         <h4>Select multiple</h4>
-        <select {...this::selectedLink('bikes')} multiple>
+        <select {...this::selectedLink('bikes', true)}>
           <option value="ducati">Ducati</option>
           <option value="honda">Honda</option>
           <option value="suzuki">Suzuki</option>
