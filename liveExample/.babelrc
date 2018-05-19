@@ -1,1 +1,4 @@
-{ "presets": ["frontend-app/cjs/babel-preset"] }
+{
+  "presets": ["frontend-app/cjs/babel-preset"],
+  "plugins": ["babel-plugin-preval"]
+}
