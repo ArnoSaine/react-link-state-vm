@@ -29,6 +29,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-github-corner": "^2.3.0",
     "react-hot-loader": "^4.2.0",
     "react-link-state-vm": "file:../react-link-state-vm-0.1.4.tgz",
     "react-live-editor": "^5.2.1"
