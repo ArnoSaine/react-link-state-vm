@@ -15,19 +15,18 @@ export default function(name, value) {
         ? this::getValue(name, false)
         : this::getValue(name, []).indexOf(value) > -1,
     // : this::getValue(name, []).includes(value),
-    onChange: ({ target: { checked, type } }) =>
-      this.setState(
-        state =>
-          value === undefined
-            ? {
-                [name]: checked
-              }
-            : {
-                [name]:
-                  type === 'checkbox'
-                    ? nextMultiValues(checked, (state ?? {})[name], value)
-                    : value
-              }
-      )
+    onChange:
+      value === undefined
+        ? ({ target: { checked } }) =>
+            this.setState({
+              [name]: checked
+            })
+        : ({ target: { checked, type } }) =>
+            this.setState(state => ({
+              [name]:
+                type === 'checkbox'
+                  ? nextMultiValues(checked, (state ?? {})[name], value)
+                  : value
+            }))
   };
 }
