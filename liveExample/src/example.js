@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { checkedLink, selectedLink, valueLink } from 'react-link-state-vm';
+import {
+  checkedLink,
+  selectedLink,
+  valueLink,
+  selectedLinkOptions
+} from 'react-link-state-vm';
+
+const a = {};
+const b = true;
+const c = false;
+const d = 0;
+const e = 1;
+const f = null;
 
 class Example extends Component {
   render() {
@@ -67,6 +79,34 @@ class Example extends Component {
           <option value="suzuki">Suzuki</option>
           <option value="yamaha">Yamaha</option>
         </select>
+
+        <h4>Select non-string value</h4>
+        <select
+          {...this::selectedLinkOptions('custom type', [
+            { label: 'A', value: a },
+            { label: 'B', value: b },
+            { label: 'C', value: c },
+            { label: 'D', value: d },
+            { label: 'E', value: e },
+            { label: 'F', value: f }
+          ])}
+        />
+
+        <h4>Select multiple non-string values</h4>
+        <select
+          {...this::selectedLinkOptions(
+            'custom types',
+            [
+              { label: 'A', value: a },
+              { label: 'B', value: b },
+              { label: 'C', value: c },
+              { label: 'D', value: d },
+              { label: 'E', value: e },
+              { label: 'F', value: f }
+            ],
+            true
+          )}
+        />
 
         <h4>this.state</h4>
         <pre>
