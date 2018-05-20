@@ -6,7 +6,7 @@ const nextMultiValues = (checked, current = [], value) =>
 // Checkbox
 // checkedLink :: ReactInstance => String -> {String name, Boolean checked, Function onChange}
 // Radio and Multi-checkbox
-// checkedLink :: ReactInstance => (string, String) -> {String name, Boolean checked, Function onChange}
+// checkedLink :: ReactInstance => (String, String) -> {String name, Boolean checked, Function onChange}
 export default function(name, value) {
   return {
     name,

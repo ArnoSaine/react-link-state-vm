@@ -10,7 +10,7 @@ const nextMultiValues = options =>
 // Select
 // selectedLink :: ReactInstance => String -> {String value, Function onChange}
 // Select multiple
-// selectedLink :: ReactInstance => String, Boolean -> {Array value, Function onChange}
+// selectedLink :: ReactInstance => (String, Boolean) -> {Array value, Function onChange}
 export default function(name, multiple) {
   return {
     multiple,
